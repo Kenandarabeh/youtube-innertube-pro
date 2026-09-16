@@ -1,11 +1,14 @@
-# InnerTube Pro ⚡
-### Modern YouTube Architecture Research Suite & Multi-Format Media Studio
+<p align="center">
+  <img src="assets/social_preview.png" alt="InnerTube Pro Banner" width="100%">
+</p>
 
-[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://python.org)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Architecture](https://img.shields.io/badge/Architecture-InnerTube%20%2F%20SDUI-red.svg)](docs/INNERTUBE_INTERNAL_ARCHITECTURE.md)
-[![Standards](https://img.shields.io/badge/Standard-RFC%205987%20%2F%206266-orange.svg)](https://datatracker.ietf.org/doc/html/rfc5987)
-[![Threading](https://img.shields.io/badge/Concurrency-Multi--Threaded%20Daemon-purple.svg)](#concurrency-model)
+<p align="center">
+  <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
+  <a href="docs/INNERTUBE_INTERNAL_ARCHITECTURE.md"><img src="https://img.shields.io/badge/Architecture-InnerTube%20%2F%20SDUI-red.svg" alt="Architecture"></a>
+  <a href="https://datatracker.ietf.org/doc/html/rfc5987"><img src="https://img.shields.io/badge/Standard-RFC%205987%20%2F%206266-orange.svg" alt="Standards"></a>
+  <a href="#concurrency-model"><img src="https://img.shields.io/badge/Concurrency-Multi--Threaded%20Daemon-purple.svg" alt="Threading"></a>
+</p>
 
 ---
 
@@ -16,6 +19,15 @@
 > [!NOTE]
 > For an exhaustive, in-depth architectural breakdown of YouTube's internal component renderers, continuation tokens, itag formats, and cipher mechanisms, please read our dedicated whitepaper:  
 > **[📘 InnerTube Internal Architecture & Protocol Engineering](docs/INNERTUBE_INTERNAL_ARCHITECTURE.md)**
+
+---
+
+## 📸 Visual Showcase & Previews
+
+<p align="center">
+  <img src="assets/screenshot_home.png" alt="Home Feed & Infinite Scroll" width="49%">
+  <img src="assets/screenshot_downloader.png" alt="Universal Link Downloader" width="49%">
+</p>
 
 ---
 
