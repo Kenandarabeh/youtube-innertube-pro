@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/social_preview.png" alt="InnerTube Pro Banner" width="100%">
+  <img src="assets/logo.png" alt="InnerTube Pro" width="320">
 </p>
 
 <p align="center">
