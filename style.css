@@ -154,6 +154,18 @@ button, input {
   cursor: pointer;
 }
 
+.logo-custom-img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(255, 0, 51, 0.5));
+  transition: transform var(--transition-fast);
+}
+
+.brand-logo:hover .logo-custom-img {
+  transform: scale(1.08);
+}
+
 .logo-badge {
   background: linear-gradient(135deg, #FF0033 0%, #D80027 100%);
   color: #FFF;
