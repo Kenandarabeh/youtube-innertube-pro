@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+
+# Node / Web
+node_modules/
+dist/
+.DS_Store
+
+# Temporary & Downloaded Files
+*.log
+*.tmp
+Downloads/
+*.mp4
+*.webm
+*.m4a
+*.mp3
+!run.sh
