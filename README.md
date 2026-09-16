@@ -81,8 +81,8 @@
 
 ### 1. Clone & Setup
 ```bash
-git clone https://github.com/Kenandarabeh/innertube-pro.git
-cd innertube-pro
+git clone https://github.com/Kenandarabeh/youtube-innertube-pro.git
+cd youtube-innertube-pro
 pip install -r requirements.txt
 ```
 

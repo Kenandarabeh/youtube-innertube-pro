@@ -12,8 +12,8 @@ Thank you for your interest in contributing to **InnerTube Pro**! This project i
 
 2. **Clone & Run**:
    ```bash
-   git clone https://github.com/Kenandarabeh/innertube-pro.git
-   cd innertube-pro
+   git clone https://github.com/Kenandarabeh/youtube-innertube-pro.git
+   cd youtube-innertube-pro
    chmod +x run.sh
    ./run.sh
    ```

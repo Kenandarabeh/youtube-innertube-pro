@@ -844,5 +844,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 13. INITIALIZATION
   // ==========================================
-  loadHomeVideos(true);
+  const hash = window.location.hash.replace('#', '');
+  if (['home', 'shorts', 'trending', 'downloader', 'library'].includes(hash)) {
+    switchView(hash);
+  } else {
+    loadHomeVideos(true);
+  }
 });
