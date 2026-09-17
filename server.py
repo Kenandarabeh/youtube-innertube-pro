@@ -21,6 +21,7 @@ import sys
 import re
 import subprocess
 import glob
+import shutil
 import yt_dlp
 
 PORT = int(os.environ.get("PORT", 5050))
@@ -200,11 +201,16 @@ def download_video_local(vid, media_type="video", quality="720p", title="video")
             "cached": True
         }
 
+    resilient_args = ["--extractor-args", "youtube:player_client=android,ios,mweb"]
+    if shutil.which("node"):
+        resilient_args.extend(["--js-runtimes", "node"])
+
     if media_type == "audio":
         if quality == "m4a":
             out_tmpl = os.path.join(DOWNLOADS_DIR, f"{safe_title}.%(ext)s")
             cmd = [
                 sys.executable, "-m", "yt_dlp",
+                *resilient_args,
                 "-f", "ba[ext=m4a]/ba",
                 "--no-playlist",
                 "--no-mtime",
@@ -215,6 +221,7 @@ def download_video_local(vid, media_type="video", quality="720p", title="video")
             out_tmpl = os.path.join(DOWNLOADS_DIR, f"{safe_title}.%(ext)s")
             cmd = [
                 sys.executable, "-m", "yt_dlp",
+                *resilient_args,
                 "-x", "--audio-format", "mp3",
                 "--audio-quality", "0",
                 "--no-playlist",
@@ -237,6 +244,7 @@ def download_video_local(vid, media_type="video", quality="720p", title="video")
 
         cmd = [
             sys.executable, "-m", "yt_dlp",
+            *resilient_args,
             "-f", f_spec,
             "--merge-output-format", "mp4",
             "--no-playlist",
@@ -286,7 +294,18 @@ def inspect_youtube_url(url_or_id):
     else:
         target_url = clean_input
 
-    ydl_opts = {'quiet': True, 'no_warnings': True, 'skip_download': True}
+    ydl_opts = {
+        'quiet': True,
+        'no_warnings': True,
+        'skip_download': True,
+        'extractor_args': {
+            'youtube': {
+                'player_client': ['android', 'ios', 'mweb']
+            }
+        }
+    }
+    if shutil.which("node"):
+        ydl_opts['js_runtimes'] = {'node': {}}
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(target_url, download=False)
