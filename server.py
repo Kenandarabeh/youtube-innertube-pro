@@ -29,6 +29,18 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.expanduser('~/Downloads')
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
 
+def get_cookie_file():
+    """Locates YouTube session cookies if available (local or cloud secret file)."""
+    candidates = [
+        "/etc/secrets/cookies.txt",
+        os.path.join(BASE_DIR, "cookies.txt"),
+        os.path.expanduser("~/cookies.txt")
+    ]
+    for path in candidates:
+        if os.path.exists(path) and os.path.getsize(path) > 50:
+            return path
+    return None
+
 # ----------------------------------------------------------------------
 # 1. CORE INNERTUBE RECURSIVE SCANNER & QUERY ENGINE
 # ----------------------------------------------------------------------
@@ -204,6 +216,9 @@ def download_video_local(vid, media_type="video", quality="720p", title="video")
     resilient_args = ["--extractor-args", "youtube:player_client=android,ios,mweb"]
     if shutil.which("node"):
         resilient_args.extend(["--js-runtimes", "node"])
+    cookie_file = get_cookie_file()
+    if cookie_file:
+        resilient_args.extend(["--cookies", cookie_file])
 
     if media_type == "audio":
         if quality == "m4a":
@@ -306,6 +321,9 @@ def inspect_youtube_url(url_or_id):
     }
     if shutil.which("node"):
         ydl_opts['js_runtimes'] = {'node': {}}
+    cookie_file = get_cookie_file()
+    if cookie_file:
+        ydl_opts['cookiefile'] = cookie_file
     try:
         with yt_dlp.YoutubeDL(ydl_opts) as ydl:
             info = ydl.extract_info(target_url, download=False)

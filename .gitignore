@@ -21,4 +21,7 @@ Downloads/
 *.webm
 *.m4a
 *.mp3
-!run.sh
+# Cookies & Secrets
+cookies.txt
+*.cookies
+*.session
