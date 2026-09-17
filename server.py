@@ -23,7 +23,7 @@ import subprocess
 import glob
 import yt_dlp
 
-PORT = 5050
+PORT = int(os.environ.get("PORT", 5050))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DOWNLOADS_DIR = os.path.expanduser('~/Downloads')
 os.makedirs(DOWNLOADS_DIR, exist_ok=True)
