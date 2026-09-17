@@ -3,6 +3,7 @@
 </p>
 
 <p align="center">
+  <a href="https://youtube-innertube-pro.onrender.com"><img src="https://img.shields.io/badge/Live%20Demo-Render.com-46E3B7?style=flat&logo=render&logoColor=white" alt="Live Demo"></a>
   <a href="https://python.org"><img src="https://img.shields.io/badge/Python-3.10%2B-blue.svg" alt="Python"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License"></a>
   <a href="docs/INNERTUBE_INTERNAL_ARCHITECTURE.md"><img src="https://img.shields.io/badge/Architecture-InnerTube%20%2F%20SDUI-red.svg" alt="Architecture"></a>
